@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 14:14:17 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/24 14:04:46 by agorski          ###   ########.fr       */
+/*   Created: 2024/10/24 16:17:28 by agorski           #+#    #+#             */
+/*   Updated: 2024/10/24 17:50:55 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-
-typedef struct n_element
+void	ft_element_error(t_element **a, t_element **b)
 {
-	int					element_data;
-	int					sorted_index;
-	struct n_element	*next_element;
-	struct n_element	*previous_element;
-}						t_element;
-
-typedef struct s_atol_conversion_result
+	ft_free_stack(a);
+	ft_free_stack(b);
+	write(2, "element error\n", 14);
+	exit(1);
+}
+void	ft_free_stack(t_element **list_head)
 {
-	long				data;
-	int					error_handler;
-}						t_atol_conversion_result;
+	t_element	*temporary;
 
-void					parse_argument(int argc, char **argv, t_element **a);
-
-#endif
+	if (!list_head)
+		return ;
+	while (*list_head)
+	{
+		temporary = *list_head;
+		*list_head = (*list_head)->next_element;
+		free(temporary);
+	}
+}
