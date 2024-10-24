@@ -1,14 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:25:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/23 21:32:34 by agorski          ###   ########.fr       */
+/*   Created: 2024/02/28 19:41:14 by agorski           #+#    #+#             */
+/*   Updated: 2024/03/14 17:43:28 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
+void	*ft_memset(void *s, int c, size_t n)
+{
+	void	*temp_s;
+
+	temp_s = s;
+	while (n--)
+	{
+		*((unsigned char *)temp_s++) = (unsigned char)c;
+	}
+	return (s);
+}

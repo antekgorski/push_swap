@@ -1,14 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 18:25:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/23 21:32:34 by agorski          ###   ########.fr       */
+/*   Created: 2024/03/01 18:16:02 by agorski           #+#    #+#             */
+/*   Updated: 2024/03/17 22:41:11 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*del;
+
+	del = (unsigned char *)s;
+	while (n--)
+	{
+		*del = '\0';
+		del++;
+	}
+}
