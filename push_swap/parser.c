@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:25:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/24 18:53:57 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/26 16:56:44 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,28 @@ void	add_element(t_element **list_head, int element_data)
 	}
 }
 
+void	print_error_and_free(t_element **a, char **split, int j)
+{
+	while (split != NULL)
+	{
+		if (split[j] == NULL)
+			break ;
+		free(split[j]);
+		j++;
+	}
+	free(split);
+	split = NULL;
+	ft_element_error(a, NULL);
+}
+
 void	parse_argument(int argc, char **argv, t_element **a)
 {
 	int							i;
 	int							j;
 	char						**split;
-	t_atol_conversion_result	result;
+	t_atol_conv_res	result;
 
-	result = (t_atol_conversion_result){0, 0};
+	result = (t_atol_conv_res){0, 0};
 	i = 1;
 	while (i < argc)
 	{
@@ -57,9 +71,9 @@ void	parse_argument(int argc, char **argv, t_element **a)
 				print_error_and_free(a, split, j);
 			add_element(a, result.data);
 			free(split[j]);
-			++j;
+			j++;
 		}
-		++i;
+		i++;
 		free(split);
 	}
 }
