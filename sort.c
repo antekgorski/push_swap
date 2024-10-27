@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbogus <tbogus@student.42warsaw.pl>        +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 20:19:52 by tbogus            #+#    #+#             */
-/*   Updated: 2024/08/28 20:54:53 by tbogus           ###   ########.fr       */
+/*   Updated: 2024/10/27 14:38:17 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	radix_sort(t_stacks *s)
 {
 	int	j;
 	int	bit_size;
-	int	size;
+	unsigned int	size;
 
 	bit_size = 0;
 	size = ft_stcksize(*(s->a));
