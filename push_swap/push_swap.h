@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:14:17 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/26 16:48:58 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/27 20:54:37 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ void					ft_element_error(t_element **a, t_element **b);
 void					ft_atol(char **parsed_elemend, t_atol_conv_res *result);
 void					ft_element_error(t_element **a, t_element **b);
 void					ft_free_stack(t_element **list_head);
+
+void					pa(t_element **a, t_element **b);
+void					pb(t_element **a, t_element **b);
 
 #endif
