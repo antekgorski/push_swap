@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:25:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/26 16:56:44 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/30 18:19:30 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	print_error_and_free(t_element **a, char **split, int j)
 
 void	parse_argument(int argc, char **argv, t_element **a)
 {
-	int							i;
-	int							j;
-	char						**split;
+	int				i;
+	int				j;
+	char			**split;
 	t_atol_conv_res	result;
 
 	result = (t_atol_conv_res){0, 0};
@@ -76,4 +76,45 @@ void	parse_argument(int argc, char **argv, t_element **a)
 		i++;
 		free(split);
 	}
+}
+void	ft_index_to_element(t_element *a, int *holder)
+{
+	t_element	*temp;
+	int			i;
+
+	temp = a;
+	i = 0;
+	while (temp)
+	{
+		i = 0;
+		while (temp->element_data != holder[i])
+		{
+			i++;
+		}
+		temp->sorted_index = i;
+		temp = temp->next_element;
+	}
+}
+
+void	ft_set_index(t_element *stack)
+{
+	t_element *temp;
+	int size;
+	int *holder;
+	int i;
+
+	size = ft_stackcount(stack);
+	holder = malloc(sizeof(int) * size);
+	if (!holder)
+		ft_element_error(&stack, NULL);
+	i = 0;
+	temp = stack;
+	while (i < size)
+	{
+		holder[i++] = temp->element_data;
+		temp = temp->element_data;
+	}
+	holder = sort_for_index(holder, size);
+	ft_index_to_element(stack, holder);
+	free(holder);
 }
