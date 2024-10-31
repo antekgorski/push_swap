@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:14:17 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 14:55:14 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:51:25 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,18 @@ typedef struct s_atol_conv_res
 
 void					parse_argument(int argc, char **argv, t_element **a);
 void					ft_element_error(t_element **a, t_element **b);
-void					ft_atol(char **parsed_elemend, t_atol_conv_res *result);
+void					ft_atol(char *parsed_e, t_atol_conv_res *result);
 void					ft_element_error(t_element **a, t_element **b);
 void					ft_free_stack(t_element **list_head);
 int						ft_stackcount(t_element *stack);
 int						*sort_for_index(int *holder, int size);
 void					ft_set_index(t_element *stack);
+void					sort(t_element **a, t_element **b);
+int						check_duplicate_number(t_element *a);
 
-void					sort_III(t_stack_pair *p);
-void					sort_IV(t_stack_pair *p);
-void					sort_V(t_stack_pair *p);
+void					sort_3(t_stack_pair *p);
+void					sort_4(t_stack_pair *p);
+void					sort_5(t_stack_pair *p);
 
 void					pa(t_element **a, t_element **b);
 void					pb(t_element **a, t_element **b);

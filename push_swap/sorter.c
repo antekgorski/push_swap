@@ -6,13 +6,13 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:37:53 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 18:24:33 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:53:19 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int static	sorted(t_element **a)
+static int	sorted(t_element **a)
 {
 	t_element	*temp;
 
@@ -25,6 +25,7 @@ int static	sorted(t_element **a)
 	}
 	return (1);
 }
+
 void	radix_stack_b(t_stack_pair *s, int b_size, int size_in_bit, int j)
 {
 	int	size;
@@ -38,7 +39,7 @@ void	radix_stack_b(t_stack_pair *s, int b_size, int size_in_bit, int j)
 	}
 	if (sorted(s->a))
 	{
-		size = ft_lstsize(*(s->b));
+		size = ft_stackcount(*(s->b));
 		while (size-- > 0 && *(s->a))
 			pa(s->a, s->b);
 	}
@@ -51,13 +52,13 @@ void	radix(t_stack_pair *p)
 	unsigned int	size;
 
 	size_in_bit = 0;
-	size = ft_lstsize(*(p->a));
+	size = ft_stackcount(*(p->a));
 	while (size > 1 && ++size_in_bit)
 		size /= 2;
 	j = -1;
 	while (++j <= size_in_bit)
 	{
-		size = ft_lstsize(*(p->a));
+		size = ft_stackcount(*(p->a));
 		while (size-- && !sorted(p->a))
 		{
 			if ((((*p->a)->sorted_index >> j) & 1) == 0)
@@ -65,13 +66,13 @@ void	radix(t_stack_pair *p)
 			else
 				ra(p->a);
 		}
-		radix_stack_b(p, ft_lstsize(*(p->b)), size_in_bit, j + 1);
+		radix_stack_b(p, ft_stackcount(*(p->b)), size_in_bit, j + 1);
 	}
 	while (*(p->b))
 		pb(p->a, p->b);
 }
 
-sort(t_element **a, t_element **b)
+void	sort(t_element **a, t_element **b)
 {
 	t_stack_pair	p;
 	int				size;
@@ -80,13 +81,13 @@ sort(t_element **a, t_element **b)
 		return ;
 	p.a = a;
 	p.b = b;
-	size = ft_lstsize(*a);
+	size = ft_stackcount(*a);
 	if (size == 3)
-		sort_III(&p);
+		sort_3(&p);
 	else if (size == 4)
-		sort_IV(&p);
+		sort_4(&p);
 	else if (size == 5)
-		sort_V(&p);
+		sort_5(&p);
 	else
 		radix(&p);
 }

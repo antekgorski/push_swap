@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:17:28 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/30 18:09:17 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:48:23 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	ft_element_error(t_element **a, t_element **b)
 	write(2, "Error\n", 6);
 	exit(1);
 }
+
 void	ft_free_stack(t_element **list_head)
 {
 	t_element	*temporary;
@@ -32,6 +33,7 @@ void	ft_free_stack(t_element **list_head)
 		free(temporary);
 	}
 }
+
 int	ft_stackcount(t_element *stack)
 {
 	int	count;
@@ -44,6 +46,7 @@ int	ft_stackcount(t_element *stack)
 	}
 	return (count);
 }
+
 int	check_duplicate_number(t_element *a)
 {
 	t_element	*curent;
@@ -63,6 +66,7 @@ int	check_duplicate_number(t_element *a)
 	}
 	return (1);
 }
+
 int	*sort_for_index(int *holder, int size)
 {
 	int	i;

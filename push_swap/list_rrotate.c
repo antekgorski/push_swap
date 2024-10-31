@@ -6,13 +6,13 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:18:25 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/30 16:28:43 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:49:00 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void static	list_rrotte(t_element **head)
+static void	list_rrotte(t_element **head)
 {
 	t_element	*last_to_new_head;
 
@@ -27,16 +27,19 @@ void static	list_rrotte(t_element **head)
 	*head = last_to_new_head;
 	last_to_new_head->next_element->previous_element = last_to_new_head;
 }
+
 void	rra(t_element **a)
 {
 	list_rrotte(a);
 	write(1, "rra\n", 4);
 }
+
 void	rrb(t_element **b)
 {
 	list_rrotte(b);
 	write(1, "rrb\n", 4);
 }
+
 void	rrr(t_element **a, t_element **b)
 {
 	list_rrotte(a);

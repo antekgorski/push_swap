@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:25:56 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/30 18:19:30 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:47:53 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	parse_argument(int argc, char **argv, t_element **a)
 		free(split);
 	}
 }
+
 void	ft_index_to_element(t_element *a, int *holder)
 {
 	t_element	*temp;
@@ -98,10 +99,10 @@ void	ft_index_to_element(t_element *a, int *holder)
 
 void	ft_set_index(t_element *stack)
 {
-	t_element *temp;
-	int size;
-	int *holder;
-	int i;
+	t_element	*temp;
+	int			size;
+	int			*holder;
+	int			i;
 
 	size = ft_stackcount(stack);
 	holder = malloc(sizeof(int) * size);
@@ -112,7 +113,7 @@ void	ft_set_index(t_element *stack)
 	while (i < size)
 	{
 		holder[i++] = temp->element_data;
-		temp = temp->element_data;
+		temp = temp->next_element;
 	}
 	holder = sort_for_index(holder, size);
 	ft_index_to_element(stack, holder);

@@ -6,13 +6,13 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:45 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 18:03:47 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:51:03 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_III(t_stack_pair *p)
+void	sort_3(t_stack_pair *p)
 {
 	if ((*p->a)->next_element->next_element->sorted_index != 2)
 	{
@@ -24,9 +24,10 @@ void	sort_III(t_stack_pair *p)
 	if ((*p->a)->sorted_index > (*p->a)->next_element->sorted_index)
 		sa(p->a);
 }
-void	sort_IV(t_stack_pair *p)
+
+void	sort_4(t_stack_pair *p)
 {
-	while (ft_stcksize(*p->b) < 2)
+	while (ft_stackcount(*p->b) < 2)
 	{
 		if ((*p->a)->sorted_index < 2)
 			pb(p->a, p->b);
@@ -40,9 +41,10 @@ void	sort_IV(t_stack_pair *p)
 	pa(p->a, p->b);
 	pa(p->a, p->b);
 }
-void	sort_V(t_stack_pair *p)
+
+void	sort_5(t_stack_pair *p)
 {
-while (ft_stcksize(*p->b) < 2)
+	while (ft_stackcount(*p->b) < 2)
 	{
 		if ((*p->a)->sorted_index < 2)
 			pb(p->a, p->b);

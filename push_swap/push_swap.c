@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:12:52 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 14:39:33 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:04:37 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		return (0);
 	a = NULL;
 	b = NULL;
-	parse_arguments(argc, argv, &a);
+	parse_argument(argc, argv, &a);
 	if (ft_stackcount(a) < 2)
 	{
 		ft_free_stack(&a);

@@ -6,18 +6,18 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 18:53:45 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/26 16:57:16 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 19:23:12 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sign_set(int sign, const char *parsed_e, int *i)
+void	sign_set(int *sign, const char *parsed_e, int *i)
 {
 	if (parsed_e[*i] == '-' || parsed_e[*i] == '+')
 	{
 		if (parsed_e[*i] == '-')
-			sign = '-1';
+			*sign = -1;
 		(*i)++;
 	}
 }
@@ -44,7 +44,7 @@ int	verifi_overflow(long res, int sign, t_atol_conv_res *result)
 	return (0);
 }
 
-void	ft_atol(char **parsed_e, t_atol_conv_res *result)
+void	ft_atol(char *parsed_e, t_atol_conv_res *result)
 {
 	int		i;
 	int		sign;
