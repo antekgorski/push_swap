@@ -6,7 +6,7 @@
 /*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:14:17 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/30 18:21:31 by agorski          ###   ########.fr       */
+/*   Updated: 2024/10/31 14:55:14 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ void					ft_free_stack(t_element **list_head);
 int						ft_stackcount(t_element *stack);
 int						*sort_for_index(int *holder, int size);
 void					ft_set_index(t_element *stack);
+
+void					sort_III(t_stack_pair *p);
+void					sort_IV(t_stack_pair *p);
+void					sort_V(t_stack_pair *p);
 
 void					pa(t_element **a, t_element **b);
 void					pb(t_element **a, t_element **b);
