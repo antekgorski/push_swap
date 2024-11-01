@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_rrotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:18:25 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 19:49:00 by agorski          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:27:42 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	list_rrotte(t_element **head)
 	while (last_to_new_head->next_element)
 		last_to_new_head = last_to_new_head->next_element;
 	last_to_new_head->previous_element->next_element = NULL;
-	last_to_new_head->next_element = NULL;
+	last_to_new_head->previous_element = NULL;
 	last_to_new_head->next_element = *head;
 	*head = last_to_new_head;
 	last_to_new_head->next_element->previous_element = last_to_new_head;

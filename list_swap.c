@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:26:05 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 19:52:27 by agorski          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:26:29 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	list_swap(t_element **head)
 	temp->next_element = (*head)->next_element;
 	temp->previous_element = *head;
 	(*head)->next_element = temp;
+	(*head)->previous_element = NULL;
 	if (temp->next_element)
 		temp->next_element->previous_element = temp;
 }

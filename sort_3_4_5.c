@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3_4_5.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:45 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 19:51:03 by agorski          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:18:25 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	sort_3(t_stack_pair *p)
 {

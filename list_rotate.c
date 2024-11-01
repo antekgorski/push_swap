@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agorski <agorski@student.42.fr>            +#+  +:+       +#+        */
+/*   By: agorski <agorski@student.42warsaw.pl>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:18:11 by agorski           #+#    #+#             */
-/*   Updated: 2024/10/31 19:48:48 by agorski          ###   ########.fr       */
+/*   Updated: 2024/11/01 13:35:46 by agorski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	list_rotate(t_element **head)
 	shift_up->next_element = *head;
 	*head = (*head)->next_element;
 	(*head)->previous_element = NULL;
+	shift_up->next_element->previous_element = shift_up;
 	shift_up->next_element->next_element = NULL;
 }
 
